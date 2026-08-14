@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestige Detailing | Mobile Auto Detailing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -18,457 +18,132 @@
             --silver-muted: #94a3b8;
             --text-light: #f8fafc;
             --border-color: rgba(226, 232, 240, 0.15);
+            --font-lux: 'Bodoni Moda', serif; /* Luxurious Serif */
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
 
         /* --- NAVBAR --- */
-        nav {
-            background: rgba(7, 10, 18, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--silver-primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: var(--accent-glow);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--silver-muted);
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--silver-primary);
-        }
-
-        .btn-call {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-glow));
-            color: #fff;
-            padding: 0.6rem 1.4rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            transition: 0.3s;
-        }
-
-        .btn-call:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
-        }
+        nav { background: rgba(7, 10, 18, 0.95); backdrop-filter: blur(10px); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid var(--border-color); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo-group { display: flex; align-items: center; gap: 15px; }
+        .logo-placeholder { width: 45px; height: 45px; background: rgba(255,255,255,0.05); border-radius: 50%; border: 1px dashed var(--silver-muted); display: flex; justify-content: center; align-items: center; font-size: 0.7rem; color: var(--silver-muted); }
+        .logo-text { font-family: var(--font-lux); font-weight: 800; font-size: 1.7rem; text-transform: uppercase; letter-spacing: 2px; }
+        .logo-text .prestige { color: #fff; }
+        .logo-text .detailing { color: var(--accent-glow); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--silver-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--silver-primary); }
+        .btn-call { background: linear-gradient(135deg, var(--accent-blue), var(--accent-glow)); color: #fff; padding: 0.6rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: 0.3s; display: flex; align-items: center; gap: 8px;}
+        .btn-call:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5); }
 
         /* --- HERO SECTION --- */
-        .hero {
-            padding: 160px 5% 90px;
-            text-align: center;
-            background: radial-gradient(circle at top, #1e293b 0%, var(--bg-dark) 70%);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .hero p.tagline {
-            font-size: 1.3rem;
-            color: var(--silver-primary);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            letter-spacing: 1px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--silver-primary);
-            color: var(--silver-primary);
-            padding: 0.6rem 1.4rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--silver-primary);
-            color: var(--bg-dark);
-        }
+        .hero { padding: 180px 5% 100px; text-align: center; background: radial-gradient(circle at top, #1e293b 0%, var(--bg-dark) 70%); border-bottom: 1px solid var(--border-color); }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; color: #fff; }
+        .hero p.tagline { font-size: 1.4rem; color: var(--silver-primary); font-weight: 300; margin-bottom: 2.5rem; letter-spacing: 1px; }
+        .hero-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 30px; }
+        .btn-message { background: rgba(59, 130, 246, 0.1); border: 2px solid var(--accent-blue); color: #fff; padding: 0.6rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .btn-message:hover { background: var(--accent-blue); transform: translateY(-2px); }
+        .btn-secondary { border: 2px solid var(--silver-primary); color: var(--silver-primary); padding: 0.6rem 1.4rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .btn-secondary:hover { background: var(--silver-primary); color: var(--bg-dark); }
+        .google-profile-cta { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; color: var(--silver-muted); text-decoration: none; font-size: 0.9rem; transition: 0.3s;}
+        .google-profile-cta:hover { color: var(--accent-glow); }
+        .google-profile-cta i { color: var(--accent-glow); font-size: 1.1rem;}
 
         /* --- SERVICE AREA BANNER --- */
-        .service-banner {
-            background: var(--bg-card);
-            padding: 2rem 5%;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .service-banner h3 {
-            color: var(--silver-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .service-banner p {
-            color: var(--silver-muted);
-            font-size: 0.95rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .disclaimer {
-            font-size: 0.85rem;
-            color: #f59e0b;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
+        .service-banner { background: var(--bg-card); padding: 2.5rem 5%; text-align: center; border-bottom: 1px solid var(--border-color); }
+        .service-banner h3 { color: var(--silver-primary); margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 10px;}
+        .service-banner p { color: var(--silver-muted); font-size: 1rem; max-width: 900px; margin: 0 auto; }
+        .disclaimer { font-size: 0.85rem; color: #f59e0b; margin-top: 0.5rem; font-style: italic; }
 
         /* --- GENERAL SECTION STYLES --- */
-        section {
-            padding: 80px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            color: var(--silver-primary);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--silver-muted);
-            margin-bottom: 50px;
-        }
+        section { padding: 90px 5%; }
+        .section-title { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.4rem; text-transform: uppercase; margin-bottom: 10px; color: var(--silver-primary); }
+        .section-subtitle { text-align: center; color: var(--silver-muted); margin-bottom: 60px; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;}
 
         /* --- SERVICES & PRICING --- */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .price-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2.5rem 1.8rem;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .price-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-glow);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .vehicle-type {
-            font-size: 1.4rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-glow);
-            margin-bottom: 1.5rem;
-        }
-
-        .price span {
-            font-size: 0.9rem;
-            color: var(--silver-muted);
-            font-weight: 400;
-        }
-
-        .service-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .service-list li {
-            margin-bottom: 0.8rem;
-            color: var(--silver-muted);
-            font-size: 0.95rem;
-        }
-
-        .service-list li i {
-            color: var(--accent-glow);
-            margin-right: 8px;
-        }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto; }
+        .price-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2.5rem 1.8rem; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .price-card:hover { transform: translateY(-5px); border-color: var(--accent-glow); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+        .vehicle-type { font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; font-weight: 600;}
+        .price { font-size: 2.8rem; font-weight: 700; color: var(--accent-glow); margin-bottom: 1.5rem; }
+        .price span { font-size: 1rem; color: var(--silver-muted); font-weight: 400; }
+        .service-list { list-style: none; margin-bottom: 2.5rem; }
+        .service-list li { margin-bottom: 0.9rem; color: var(--silver-muted); font-size: 0.95rem; display: flex; align-items: start;}
+        .service-list li i { color: var(--accent-glow); margin-right: 10px; margin-top: 4px;}
 
         /* --- ADD-ONS SECTION --- */
-        .addons-container {
-            background: var(--bg-card);
-            border-radius: 12px;
-            padding: 2.5rem;
-            max-width: 1000px;
-            margin: 40px auto 0;
-            border: 1px solid var(--border-color);
-        }
-
-        .addons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .addon-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            padding: 1rem;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .addon-name {
-            font-weight: 500;
-            color: var(--silver-primary);
-        }
-
-        .addon-price {
-            color: var(--accent-glow);
-            font-weight: 700;
-        }
+        .addons-container { background: var(--bg-card); border-radius: 12px; padding: 3rem; max-width: 1000px; margin: 60px auto 0; border: 1px solid var(--border-color); }
+        .addons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; margin-top: 2rem; }
+        .addon-item { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 1.2rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s;}
+        .addon-item:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+        .addon-name { font-weight: 500; color: var(--silver-primary); }
+        .addon-price { color: var(--accent-glow); font-weight: 700; }
 
         /* --- BEFORE & AFTER GALLERY --- */
-        .ba-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .ba-card {
-            background: var(--bg-card);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .ba-images {
-            display: flex;
-        }
-
-        .ba-img-wrapper {
-            width: 50%;
-            position: relative;
-        }
-
-        .ba-img-wrapper img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .ba-label {
-            position: absolute;
-            bottom: 8px;
-            left: 8px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 2px 8px;
-            font-size: 0.75rem;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .ba-info {
-            padding: 1rem;
-            text-align: center;
-            font-weight: 600;
-            color: var(--silver-primary);
-        }
+        .ba-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1100px; margin: 0 auto; }
+        .ba-card { background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); transition: 0.3s;}
+        .ba-card:hover { border-color: var(--silver-muted); }
+        .ba-images { display: flex; }
+        .ba-img-wrapper { width: 50%; position: relative; }
+        .ba-img-wrapper img { width: 100%; height: 240px; object-fit: cover; display: block; }
+        .ba-label { position: absolute; bottom: 8px; left: 8px; background: rgba(0, 0, 0, 0.7); color: #fff; padding: 2px 10px; font-size: 0.75rem; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
+        .ba-info { padding: 1.2rem; text-align: center; font-weight: 600; color: var(--silver-primary); font-size: 1.05rem; }
 
         /* --- SINGLE SHOWCASE GALLERY --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            height: 250px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.4s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(7, 10, 18, 0.9));
-            padding: 1.5rem 1rem 0.8rem;
-            text-align: center;
-            color: var(--silver-primary);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .gallery-item { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); height: 280px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(7, 10, 18, 0.95)); padding: 2rem 1rem 1rem; text-align: center; color: var(--silver-primary); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.95rem; }
 
         /* --- REVIEWS SECTION --- */
-        .reviews-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .review-card {
-            background: var(--bg-dark);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            border-radius: 12px;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            text-align: center;
-        }
-
-        .stars {
-            color: #f59e0b;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .review-text {
-            font-style: italic;
-            color: var(--silver-primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .client-name {
-            font-weight: 700;
-            color: var(--silver-muted);
-        }
-
-        .google-review-cta {
-            text-align: center;
-            margin-top: 1.5rem;
-        }
+        .reviews-section { background: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        .review-card { background: var(--bg-dark); border: 1px solid var(--border-color); padding: 3rem; border-radius: 12px; max-width: 800px; margin: 0 auto 3rem; text-align: center; transition: 0.3s;}
+        .review-card:hover { border-color: var(--accent-glow); }
+        .stars { color: #f59e0b; margin-bottom: 1rem; font-size: 1.3rem; }
+        .review-text { font-style: italic; color: var(--silver-primary); margin-bottom: 1.8rem; font-size: 1.15rem; line-height: 1.8;}
+        .client-name { font-weight: 700; color: var(--silver-muted); font-size: 1rem; }
+        .google-review-cta { text-align: center; margin-top: 2rem; }
 
         /* --- FOOTER --- */
-        footer {
-            background: #04060c;
-            padding: 50px 5% 20px;
-            border-top: 1px solid var(--border-color);
-        }
+        footer { background: #04060c; padding: 70px 5% 30px; border-top: 1px solid var(--border-color); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto 50px; }
+        .footer-social-links { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .social-action-btn { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); color: var(--silver-primary); padding: 0.8rem 1.6rem; border-radius: 8px; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 10px; transition: 0.3s; font-size: 0.95rem; }
+        .social-action-btn:hover { background: rgba(255,255,255,0.05); border-color: var(--silver-muted); }
+        .social-action-btn.fb { color: #1877f2; border-color: rgba(24, 119, 242, 0.2); }
+        .social-action-btn.fb:hover { border-color: #1877f2; background: rgba(24, 119, 242, 0.05); color: #fff;}
+        .social-action-btn.gp { color: var(--accent-glow); border-color: rgba(59, 130, 246, 0.2); }
+        .social-action-btn.gp:hover { border-color: var(--accent-glow); background: rgba(59, 130, 246, 0.05); color: #fff;}
+        .copyright { text-align: center; color: var(--silver-muted); font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 25px; }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto 40px;
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
         }
-
-        .social-links a {
-            color: var(--silver-primary);
-            font-size: 1.5rem;
-            margin-left: 1.2rem;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-glow);
-        }
-
-        .copyright {
-            text-align: center;
-            color: var(--silver-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 20px;
-        }
-
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .nav-logo-group { gap: 10px; }
+            .logo-text { font-size: 1.4rem; }
+            .logo-placeholder { width: 35px; height: 35px; font-size: 0.6rem; }
+            .hero { padding: 150px 5% 80px; }
             .hero h1 { font-size: 2rem; }
-            .hero p.tagline { font-size: 1rem; }
+            .hero p.tagline { font-size: 1.1rem; }
+            .footer-content { justify-content: center; text-align: center; }
+            .footer-social-links { justify-content: center; width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Prestige <span>Detailing</span></div>
+        <div class="nav-logo-group">
+            <div class="logo-placeholder">LOGO</div>
+            <div class="logo-text">
+                <span class="prestige">Prestige</span> <span class="detailing">Detailing</span>
+            </div>
+        </div>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#transformations">Before & After</a></li>
@@ -482,9 +157,12 @@
         <h1>Prestige Detailing</h1>
         <p class="tagline">Driven By Quality, Defined By Detail</p>
         <div class="hero-buttons">
-            <a href="tel:7043870188" class="btn-call">Book Your Detail</a>
+            <a href="tel:7043870188" class="btn-call">Book Your Detail <i class="fa-solid fa-chevron-right"></i></a>
             <a href="#services" class="btn-secondary">View Pricing</a>
         </div>
+        <a href="https://www.google.com/search?kgmid=/g/11zwpd8ktk&hl=en-US&q=Prestige+Detailing&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/osrp/m5/3&kgs=109b3ecb9621e6fb&utm_source=epsd1,ltae,rimspwouoe,sh/x/loc/osrp/m5/3&safe=active#ebo=0" target="_blank" class="google-profile-cta">
+            <i class="fa-brands fa-google"></i> View our Google Business Profile
+        </a>
     </section>
 
     <div class="service-banner">
@@ -513,7 +191,7 @@
                         <li><i class="fa-solid fa-check"></i> Hand Dry & Spray Wax</li>
                     </ul>
                 </div>
-                <a href="tel:7043870188" class="btn-secondary" style="text-align: center;">Book Sedan</a>
+                <a href="sms:+17043870188?body=I'm interested in booking a Sedan Detail with Prestige Detailing!" class="btn-message"><i class="fa-solid fa-comment-dots"></i> Message Sedan</a>
             </div>
 
             <div class="price-card">
@@ -531,7 +209,7 @@
                         <li><i class="fa-solid fa-check"></i> Microfiber Hand Dry & Spray Wax</li>
                     </ul>
                 </div>
-                <a href="tel:7043870188" class="btn-secondary" style="text-align: center;">Book 2-Row SUV</a>
+                <a href="sms:+17043870188?body=I'm interested in booking a 2-Row SUV Detail with Prestige Detailing!" class="btn-message"><i class="fa-solid fa-comment-dots"></i> Message 2-Row SUV</a>
             </div>
 
             <div class="price-card">
@@ -549,7 +227,7 @@
                         <li><i class="fa-solid fa-check"></i> Hand Dry & Protective Spray Wax</li>
                     </ul>
                 </div>
-                <a href="tel:7043870188" class="btn-secondary" style="text-align: center;">Book 3-Row / Truck</a>
+                <a href="sms:+17043870188?body=I'm interested in booking a 3-Row SUV/Truck Detail with Prestige Detailing!" class="btn-message"><i class="fa-solid fa-comment-dots"></i> Message Truck</a>
             </div>
         </div>
 
@@ -621,29 +299,15 @@
             <div class="ba-card">
                 <div class="ba-images">
                     <div class="ba-img-wrapper">
-                        <img src="before3.jpg" alt="Before Seat Shampoo" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
+                        <img src="before3.jpg" alt="Before Leather Treatment" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
                         <span class="ba-label">Before</span>
                     </div>
                     <div class="ba-img-wrapper">
-                        <img src="after3.jpg" alt="After Seat Shampoo" onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
+                        <img src="after3.jpg" alt="After Leather Treatment" onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
                         <span class="ba-label">After</span>
                     </div>
                 </div>
-                <div class="ba-info">Leather & Fabric Restoration</div>
-            </div>
-
-            <div class="ba-card">
-                <div class="ba-images">
-                    <div class="ba-img-wrapper">
-                        <img src="before4.jpg" alt="Before Wheels" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
-                        <span class="ba-label">Before</span>
-                    </div>
-                    <div class="ba-img-wrapper">
-                        <img src="after4.jpg" alt="After Wheels" onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
-                        <span class="ba-label">After</span>
-                    </div>
-                </div>
-                <div class="ba-info">Wheel Wash & Tire Shine</div>
+                <div class="ba-info">Leather Conditioning</div>
             </div>
         </div>
     </section>
@@ -654,28 +318,28 @@
 
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="showcase1.jpg" alt="Finished Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+1'">
-                <div class="gallery-caption">Finished Result</div>
+                <img src="showcase1.jpg" alt="Finished Detailing Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+1'">
+                <div class="gallery-caption">finished result</div>
             </div>
             <div class="gallery-item">
-                <img src="showcase2.jpg" alt="Finished Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+2'">
-                <div class="gallery-caption">Finished Result</div>
+                <img src="showcase2.jpg" alt="Finished Detailing Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+2'">
+                <div class="gallery-caption">finished result</div>
             </div>
             <div class="gallery-item">
-                <img src="showcase3.jpg" alt="Finished Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+3'">
-                <div class="gallery-caption">Finished Result</div>
+                <img src="showcase3.jpg" alt="Finished Detailing Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+3'">
+                <div class="gallery-caption">finished result</div>
             </div>
             <div class="gallery-item">
-                <img src="showcase4.jpg" alt="Finished Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+4'">
-                <div class="gallery-caption">Finished Result</div>
+                <img src="showcase4.jpg" alt="Finished Detailing Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+4'">
+                <div class="gallery-caption">finished result</div>
             </div>
             <div class="gallery-item">
-                <img src="showcase5.jpg" alt="Finished Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+5'">
-                <div class="gallery-caption">Finished Result</div>
+                <img src="showcase5.jpg" alt="Finished Detailing Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+5'">
+                <div class="gallery-caption">finished result</div>
             </div>
             <div class="gallery-item">
-                <img src="showcase6.jpg" alt="Finished Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+6'">
-                <div class="gallery-caption">Finished Result</div>
+                <img src="showcase6.jpg" alt="Finished Detailing Result" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Finished+Result+6'">
+                <div class="gallery-caption">finished result</div>
             </div>
         </div>
     </section>
@@ -697,7 +361,7 @@
         </div>
 
         <div class="google-review-cta">
-            <a href="YOUR_GOOGLE_REVIEW_LINK_HERE" target="_blank" class="btn-secondary">
+            <a href="YOUR_GOOGLE_REVIEW_PAGE_LINK_HERE" target="_blank" class="btn-secondary">
                 <i class="fa-brands fa-google"></i> Leave Us A Google Review
             </a>
         </div>
@@ -706,18 +370,30 @@
     <footer>
         <div class="footer-content">
             <div>
-                <div class="logo">Prestige <span>Detailing</span></div>
-                <p style="color: var(--silver-muted); margin-top: 5px;">Driven By Quality, Defined By Detail</p>
-                <p style="color: var(--silver-muted); font-size: 0.9rem; margin-top: 10px;">
-                    <i class="fa-solid fa-envelope"></i> prestigedetailing2009@gmail.com<br>
-                    <i class="fa-solid fa-phone"></i> 704-387-0188
+                <div class="nav-logo-group">
+                    <div class="logo-placeholder" style="border-color: rgba(255,255,255,0.1);">LOGO</div>
+                    <div class="logo-text">
+                        <span class="prestige">Prestige</span> <span class="detailing">Detailing</span>
+                    </div>
+                </div>
+                <p style="color: var(--silver-muted); margin-top: 10px;">Driven By Quality, Defined By Detail</p>
+                <p style="color: var(--silver-muted); font-size: 0.95rem; margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px;">
+                    <i class="fa-solid fa-envelope" style="color: var(--accent-glow);"></i> prestigedetailing2009@gmail.com<br>
+                    <i class="fa-solid fa-phone" style="color: var(--accent-glow);"></i> 704-387-0188
                 </p>
             </div>
-            <div class="social-links">
-                <a href="https://www.facebook.com/marketplace/profile/61579383523760/?ref=perma%C3%B1ink&mibextid=6ijiHh" target="_blank" title="Facebook Marketplace"><i class="fa-solid fa-store"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=6157938352376" target="_blank" title="Facebook Page"><i class="fa-brands fa-facebook"></i></a>
+            
+            <div class="footer-social-links">
+                <a href="https://www.facebook.com/marketplace/profile/61579383523760/?ref=perma%C3%B1ink&mibextid=6ijiHh" target="_blank" class="social-action-btn fb">
+                    <i class="fa-brands fa-facebook"></i> View Marketplace Profile
+                </a>
+                
+                <a href="https://www.google.com/search?kgmid=/g/11zwpd8ktk&hl=en-US&q=Prestige+Detailing&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/osrp/m5/3&kgs=109b3ecb9621e6fb&utm_source=epsd1,ltae,rimspwouoe,sh/x/loc/osrp/m5/3&safe=active#ebo=0" target="_blank" class="social-action-btn gp">
+                    <i class="fa-brands fa-google"></i> Google Business Profile
+                </a>
             </div>
         </div>
+        
         <div class="copyright">
             &copy; 2026 Prestige Detailing. All Rights Reserved.
         </div>
