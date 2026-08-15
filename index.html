@@ -88,7 +88,6 @@
         .ba-img-wrapper { width: 50%; position: relative; }
         .ba-img-wrapper img { width: 100%; height: 240px; object-fit: cover; display: block; }
         .ba-label { position: absolute; bottom: 8px; left: 8px; background: rgba(0, 0, 0, 0.7); color: #fff; padding: 2px 10px; font-size: 0.75rem; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
-        .ba-info { padding: 1.2rem; text-align: center; font-weight: 600; color: var(--silver-primary); font-size: 1.05rem; }
 
         /* --- SINGLE SHOWCASE GALLERY --- */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
@@ -99,11 +98,12 @@
 
         /* --- REVIEWS SECTION --- */
         .reviews-section { background: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-        .review-card { background: var(--bg-dark); border: 1px solid var(--border-color); padding: 3rem; border-radius: 12px; max-width: 800px; margin: 0 auto 3rem; text-align: center; transition: 0.3s;}
-        .review-card:hover { border-color: var(--accent-glow); }
-        .stars { color: #f59e0b; margin-bottom: 1rem; font-size: 1.3rem; }
-        .review-text { font-style: italic; color: var(--silver-primary); margin-bottom: 1.8rem; font-size: 1.15rem; line-height: 1.8;}
-        .client-name { font-weight: 700; color: var(--silver-muted); font-size: 1rem; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto 3rem; }
+        .review-card { background: var(--bg-dark); border: 1px solid var(--border-color); padding: 2.5rem 1.8rem; border-radius: 12px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .review-card:hover { border-color: var(--accent-glow); transform: translateY(-3px); }
+        .stars { color: #f59e0b; margin-bottom: 1rem; font-size: 1.2rem; }
+        .review-text { font-style: italic; color: var(--silver-primary); margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.7;}
+        .client-name { font-weight: 700; color: var(--silver-muted); font-size: 0.95rem; }
         .google-review-cta { text-align: center; margin-top: 2rem; }
 
         /* --- FOOTER --- */
@@ -139,7 +139,7 @@
 
     <nav>
         <div class="nav-logo-group">
-<img src="logo.png.jpeg" alt="Prestige Detailing Logo" style="height: 45px; width: auto; border-radius: 6px;">
+            <img src="logo.png.jpeg" alt="Prestige Detailing Logo" style="height: 45px; width: auto; border-radius: 6px;">
             <div class="logo-text">
                 <span class="prestige">Prestige</span> <span class="detailing">Detailing</span>
             </div>
@@ -271,11 +271,11 @@
             <div class="ba-card">
                 <div class="ba-images">
                     <div class="ba-img-wrapper">
-                        <img src="IMG_9305.jpeg" alt= onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
+                        <img src="IMG_9305.jpeg" alt="" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
                         <span class="ba-label">Before</span>
                     </div>
                     <div class="ba-img-wrapper">
-                        <img src="IMG_9307.jpeg" alt= onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
+                        <img src="IMG_9307.jpeg" alt="" onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
                         <span class="ba-label">After</span>
                     </div>
                 </div>
@@ -284,11 +284,11 @@
             <div class="ba-card">
                 <div class="ba-images">
                     <div class="ba-img-wrapper">
-                        <img src="IMG_9306.jpeg" alt= onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
+                        <img src="IMG_9306.jpeg" alt="" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
                         <span class="ba-label">Before</span>
                     </div>
                     <div class="ba-img-wrapper">
-                        <img src="IMG_9308.jpeg" alt= onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
+                        <img src="IMG_9308.jpeg" alt="" onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
                         <span class="ba-label">After</span>
                     </div>
                 </div>
@@ -297,11 +297,11 @@
             <div class="ba-card">
                 <div class="ba-images">
                     <div class="ba-img-wrapper">
-                        <img src="IMG_9313.jpeg" alt= onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
+                        <img src="IMG_9313.jpeg" alt="" onerror="this.src='https://via.placeholder.com/400x300/1e293b/ffffff?text=Before'">
                         <span class="ba-label">Before</span>
                     </div>
                     <div class="ba-img-wrapper">
-                        <img src="IMG_9316.jpeg" alt= onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
+                        <img src="IMG_9316.jpeg" alt="" onerror="this.src='https://via.placeholder.com/400x300/1d4ed8/ffffff?text=After'">
                         <span class="ba-label">After</span>
                     </div>
                 </div>
@@ -345,20 +345,46 @@
         <h2 class="section-title">Client Feedback</h2>
         <p class="section-subtitle">See what our customers say about Prestige Detailing</p>
 
-        <div class="review-card">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Communication was excellent.... And the service matched. They were super professional! We will definitely hire them again and make it a routine thing!!"</p>
+                <div class="client-name">- Valerie</div>
             </div>
-            <p class="review-text">"Prestige Detailing brought my SUV back to brand new condition! The interior plastics, carpets, and exterior shine were unbelievable. Professional, punctual, and worth every single dollar. Highly recommend!"</p>
-            <div class="client-name">- Satisfied Client in Charlotte, NC</div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"One of the best detailers in the area! Communication was exact and their work speaks volume!"</p>
+                <div class="client-name">- Koobmeej</div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Absolutely fantastic! I'm a busy mom with a dirty car and the guys were nothing but sweet and helpful! My car seriously looks brand new and I appreciate it so so much!!! I will most definitely be recommending yall to everyone!"</p>
+                <div class="client-name">- Britney</div>
+            </div>
         </div>
 
         <div class="google-review-cta">
-            <a href="YOUR_GOOGLE_REVIEW_PAGE_LINK_HERE" target="_blank" class="btn-secondary">
+            <a href="https://g.page/r/CUTxg_nV8IOUEBM/review" target="_blank" class="btn-secondary">
                 <i class="fa-brands fa-google"></i> Leave Us A Google Review
             </a>
         </div>
@@ -368,7 +394,7 @@
         <div class="footer-content">
             <div>
                 <div class="nav-logo-group">
-                  <img src="logo.png" alt="Prestige Detailing Logo" style="height: 45px; width: auto; border-radius: 6px;">
+                    <img src="logo.png.jpeg" alt="Prestige Detailing Logo" style="height: 45px; width: auto; border-radius: 6px;">
                     <div class="logo-text">
                         <span class="prestige">Prestige</span> <span class="detailing">Detailing</span>
                     </div>
@@ -395,6 +421,5 @@
             &copy; 2026 Prestige Detailing. All Rights Reserved.
         </div>
     </footer>
-
 </body>
 </html>
